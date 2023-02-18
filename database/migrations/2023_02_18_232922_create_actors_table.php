@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('actors', function (Blueprint $table) {
             $table->id();
+
+            $table -> string('name',32);
+            $table -> string('surname', 64);
+            $table -> date('date_of_birth');
+            
             $table->timestamps();
         });
     }
