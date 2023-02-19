@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'v1'], function(){
     Route::get('/', [MovieController :: class, 'home']);
+
+    Route::get('/movie/create', [MovieController :: class, 'addnew']);
     Route::post('/movie/create', [MovieController :: class, 'store']);
 });
