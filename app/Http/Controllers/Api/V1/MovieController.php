@@ -13,7 +13,7 @@ class MovieController extends Controller
     
     $movies = Movie :: with('actors','genre') -> get();
     return response() -> json([
-        'data' => $movies
+        'movies' => $movies
     ]);
    }
 }
