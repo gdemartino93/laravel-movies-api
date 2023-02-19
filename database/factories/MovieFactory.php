@@ -20,7 +20,7 @@ class MovieFactory extends Factory
             'name' => fake() -> unique() -> words(rand(1,3),true),
             'cover' => fake() -> imageUrl(200,200,'animals',true),
             'description' => fake() -> sentences(3,true),
-            'vote' => fake() -> randomFloat(1,1,5),
+            'vote' => fake() -> numberBetween(1,10),
             'year' => fake() -> year(now())
         ];
     }
