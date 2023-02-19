@@ -11,6 +11,7 @@ class Movie extends Model
     protected $fillable = [
 
         "name",
+        'cover',
         "description",
         "vote",
         "year"
