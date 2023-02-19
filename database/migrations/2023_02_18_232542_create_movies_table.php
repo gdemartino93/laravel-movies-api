@@ -16,8 +16,9 @@ return new class extends Migration
 
             $table -> string('name',32)->unique();
             $table -> string('description',256);
-            $table -> integer('vote',false,false);
+            $table -> double('vote',false,false);
             $table -> year('year');
+            
             $table->timestamps();
         });
     }
