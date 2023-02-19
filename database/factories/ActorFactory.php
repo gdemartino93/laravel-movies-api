@@ -18,7 +18,8 @@ class ActorFactory extends Factory
     {
         return [
             'name' => fake() -> firstName(),
-            'surname' => fake() -> lastName()
+            'surname' => fake() -> lastName(),
+            'date_of_birth' => fake() -> dateTimeBetween('-70 years','-20 years'),
         ];
     }
 }
