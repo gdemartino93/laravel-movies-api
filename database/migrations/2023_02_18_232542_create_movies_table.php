@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table -> string('name',32)->unique();
+            $table -> string('cover');
             $table -> string('description',256);
             $table -> double('vote',false,false);
             $table -> year('year');
