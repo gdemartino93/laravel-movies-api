@@ -15,4 +15,10 @@ class Movie extends Model
         "vote",
         "year"
     ];
+    public function genre(){
+        return $this->belongsTo(Genre :: class);
+    } 
+    public function actors(){
+        return $this->belongsToMany(Actor :: class);
+    }
 }

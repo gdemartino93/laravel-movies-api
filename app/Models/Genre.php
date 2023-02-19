@@ -12,4 +12,8 @@ class Genre extends Model
         'name',
         'over18'
     ];
+
+    public function movie(){
+        return $this->hasMany(Movie::class);
+    }
 }
