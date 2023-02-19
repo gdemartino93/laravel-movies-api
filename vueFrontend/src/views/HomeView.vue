@@ -7,7 +7,7 @@
           <div class="card-body" style="height: 18rem;">
             <h3 class="fw-bold">{{ movie.name }}</h3>
             <h6 class="fw-bold">Genre : {{ movie.genre.name }}</h6>
-            <p class="card-text">{{ movie.description }}</p>
+            <div class="card-text py-3" style="max-height: 10rem; overflow-y: auto;">{{ movie.description }}</div>
           </div>
           <div class="bg-white border-0 card-footer d-flex justify-content-between align-items-center position-absolute bottom-0 w-100 p-3">
             <span>Vote: {{ movie.vote }}</span>

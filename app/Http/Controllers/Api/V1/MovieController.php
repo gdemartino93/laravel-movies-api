@@ -11,7 +11,7 @@ class MovieController extends Controller
 {
    public function home(){
     
-    $movies = Movie :: with('actors','genre') -> get();
+    $movies = Movie :: with('genre') -> get();
     return response() -> json([
         'movies' => $movies
     ]);
