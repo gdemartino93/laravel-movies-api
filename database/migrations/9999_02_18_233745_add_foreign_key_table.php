@@ -15,8 +15,8 @@ return new class extends Migration
             $table -> foreignId('genre_id') ->constrained();
         });
         Schema::table('actor_movie', function (Blueprint $table) {
-            $table -> foreignId('actors_id') ->constrained();
-            $table -> foreignId('movies_id') ->constrained();
+            $table -> foreignId('actor_id') ->constrained();
+            $table -> foreignId('movie_id') ->constrained();
         });
     }
 
@@ -26,14 +26,15 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('movies', function (Blueprint $table) {
-            $table -> dropForeign('movies_genres_id_foreign');
-            $table->dropColumn('genres_id');
+            // fix drop fk and column
+            $table -> dropForeign('movies_genre_id_foreign');
+            $table->dropColumn('genre_id');
         });
         Schema::table('actor_movie', function (Blueprint $table) {
-            $table -> dropForeign('actor_movie_actors_id_foreign');
-            $table->dropColumn('actors_id');
-            $table -> dropForeign('actor_movie_movies_id_foreign');
-            $table->dropColumn('movies_id');
+            $table -> dropForeign('actor_movie_actor_id_foreign');
+            $table->dropColumn('actor_id');
+            $table -> dropForeign('actor_movie_movie_id_foreign');
+            $table->dropColumn('movie_id');
         });
     }
 };
