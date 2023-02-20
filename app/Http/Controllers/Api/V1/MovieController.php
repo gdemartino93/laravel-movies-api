@@ -27,7 +27,21 @@ class MovieController extends Controller
     ]);
    }
    public function store(Request $request){
-    Movie :: create($request -> validate());
+
+    $data = $request -> validate([
+        'name' => 'required|max:32',
+        'description' => 'required|max:256',
+        'cover' => 'required',
+        'vote' => 'min:1|max:5',
+        'year' => 'required',
+        'genre_id' => 'required'
+    ]);
+    $genre = Genre :: find($data['genre_id']);
+    $movie = Movie :: make($data);
+
+    $movie -> genre() -> associate($genre);
+    $movie -> save();
+
     return response() -> json("ok asd");
    }
 }

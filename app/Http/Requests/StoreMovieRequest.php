@@ -22,11 +22,11 @@ class StoreMovieRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required','max:32'],
-            'description' => ['required', 'max:256'],
-            'cover' => ['required'],
-            'vote' => ['min:1','max:5'],
-            'year' => ['required']
+            // 'name' => ['required','max:32'],
+            // 'description' => ['required', 'max:256'],
+            // 'cover' => ['required'],
+            // 'vote' => ['min:1','max:5'],
+            // 'year' => ['required']
         ];
     }
 }
