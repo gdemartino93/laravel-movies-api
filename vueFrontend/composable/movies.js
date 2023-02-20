@@ -1,5 +1,7 @@
 import axios from "axios";
 import { ref } from "vue";
+import router from "../src/router";
+import { RouterView } from "vue-router";
 
 axios.defaults.baseURL = 'http://127.0.0.1:8000/api/v1/';
 
@@ -27,7 +29,7 @@ export default function useMovies(){
     const storeSkill = async(data) =>{
         try{
             await axios.post('movie/create' , data)
-            await router.push({name : "SkillIndex"})
+            await router.push({name : "home"})
         }catch(err){
             console.log(err)
         }

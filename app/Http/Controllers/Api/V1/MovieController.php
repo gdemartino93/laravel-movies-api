@@ -13,7 +13,7 @@ class MovieController extends Controller
 {
    public function home(){
     
-    $movies = Movie :: with('genre') -> get();
+    $movies = Movie :: with('genre') -> orderBy('created_at','DESC')-> get();
     return response() -> json([
         'movies' => $movies
     ]);
