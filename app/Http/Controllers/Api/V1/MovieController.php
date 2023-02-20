@@ -20,8 +20,14 @@ class MovieController extends Controller
    }
    public function addnew(){
     $genres = Genre::all();
+    $movies = Movie::all();
     return response() -> json([
-        'genres' => $genres
+        'genres' => $genres,
+        'movies' => $movies
     ]);
+   }
+   public function store(Request $request){
+    Movie :: create($request -> validate());
+    return response() -> json("ok asd");
    }
 }

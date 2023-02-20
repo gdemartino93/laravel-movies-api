@@ -24,12 +24,21 @@ export default function useMovies(){
             })
             .catch(err => console.log(err))
     }
+    const storeSkill = async(data) =>{
+        try{
+            await axios.post('movie/create' , data)
+            await router.push({name : "SkillIndex"})
+        }catch(err){
+            console.log(err)
+        }
+    }
     
 
     return {
         movies,
         getMovies,
         genres,
-        getGenreList
+        getGenreList,
+        storeSkill
     }
 }
