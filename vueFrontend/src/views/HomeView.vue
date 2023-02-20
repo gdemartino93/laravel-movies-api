@@ -1,7 +1,9 @@
 <template>
   <div class="container p-5">
     <div class="row row-cols-4">
+      <!-- trasformare in componente  -->
       <div v-for="movie in movies" :key="movie.id" class="col mb-4 position-relative">
+        <!-- dichiarare nullable img e usare vif per mostrare quando è presente -->
         <div class="card h-100" style="width: 18rem;">
           <img :src="movie.cover" class="card-img-top" alt="{{ movie.title }}">
           <div class="card-body" style="height: 18rem;">
